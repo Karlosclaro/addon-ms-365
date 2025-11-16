@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" 
+  xsi:type="TaskPaneApp">
+
+  <Id>com.exemplo.office.addin.demo</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Exemplo</ProviderName>
+  <DefaultLocale>pt-BR</DefaultLocale>
+  <DisplayName DefaultValue="Demo Add-in Excel" />
+  <Description DefaultValue="Exemplo simples de um add-in Office para Excel usando Office.js." />
+  <IconUrl DefaultValue="https://your-cdn.example.com/assets/logo.png" />
+  <HighResolutionIconUrl DefaultValue="https://your-cdn.example.com/assets/logo@2x.png" />
+  <SupportUrl DefaultValue="https://seusite.example.com/support" />
+
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="0.0.0.0">
+      <Set Name="Office.Platform" />
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <FormFactor>Desktop</FormFactor>
+  </FormSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://your-host.example.com/TaskPaneApp/taskpane.html" />
+  </DefaultSettings>
+
+  <IconUrl DefaultValue="https://your-cdn.example.com/assets/logo.png" />
+  <SupportUrl DefaultValue="https://seusite.example.com/support" />
+  
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" 
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                    xsi:type="VersionOverridesV1_0">
+    <VersionOverride>
+      <Hosts>
+        <Host xsi:type="Workbook">
+          <DesktopFormFactor>
+            <SourceLocation DefaultValue="https://your-host.example.com/TaskPaneApp/taskpane.html" />
+            <RequestedHeight>250</RequestedHeight>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+      <Permissions>ReadWriteDocument</Permissions>
+      <Extensions>
+        <Extension>
+          <Type>Html</Type>
+          <SourceLocation DefaultValue="https://your-host.example.com/TaskPaneApp/taskpane.html" />
+        </Extension>
+      </Extensions>
+    </VersionOverride>
+  </VersionOverrides>
+</OfficeApp>
